@@ -3,6 +3,11 @@ import db from '../firebase.js';
 
 const router = Router();
 
+//? FOR TESTING
+router.get('/testme', (req, res) => {
+    res.json({ res: "Hello World!" });
+});
+
 //? GET all users list
 router.get('/getUsers', async (req, res) => {
     try {
