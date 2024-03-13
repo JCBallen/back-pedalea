@@ -5,7 +5,7 @@ const router = Router();
 
 //? FOR TESTING
 router.get('/testme', (req, res) => {
-    res.json({ res: "Hello World!" });
+    res.json({ msg: "Hello World!, it's working fine..." });
 });
 
 //? GET all users list
@@ -89,5 +89,6 @@ router.post('/register', async (req, res) => {
         res.json({ res: "Error creating document", error, status: false });
     }
 });
+
 
 export default router;
