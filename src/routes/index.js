@@ -28,7 +28,7 @@ router.get('/getUser/:id', async (req, res) => {
         if (!doc.exists) {
             res.json({ res: "No such document!" });
         } else {
-            res.json({ res: { id: req.params.id, ...doc.data() } });
+            res.json({ id: req.params.id, ...doc.data() });
         }
     } catch (error) {
         res.json({ res: "Error getting document", error });
