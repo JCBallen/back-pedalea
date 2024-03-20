@@ -20,10 +20,10 @@ router.get('/getUsers', async (req, res) => {
 });
 
 //? GET single user by email
-router.get('/getUser/:email', async (req, res) => {
+router.get('/getUser/:id', async (req, res) => {
     try {
-        // const docRef = db.collection("users").doc(req.params.email);
-        const docRef = db.collection("users").where("email", "==", req.params.email);
+        const docRef = db.collection("users").doc(req.params.id);
+        // const docRef = db.collection("users").where("email", "==", req.params.email);
         const doc = await docRef.get();
         if (!doc.exists) {
             res.json({ res: "No such document!" });
