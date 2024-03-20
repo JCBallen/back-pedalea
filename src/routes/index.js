@@ -8,16 +8,16 @@ router.get('/testme', (req, res) => {
     res.json({ msg: "Hello World!, it's working fine..." });
 });
 
-//? GET all users list
-router.get('/getUsers', async (req, res) => {
-    try {
-        const querySnapshot = await db.collection("users").get()
-        console.log(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
-        res.json({ res: querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) });
-    } catch (error) {
-        res.json({ res: "Error getting documents", error });
-    }
-});
+// //? GET all users list
+// router.get('/getUsers', async (req, res) => {
+//     try {
+//         const querySnapshot = await db.collection("users").get()
+//         console.log(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+//         res.json({ res: querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) });
+//     } catch (error) {
+//         res.json({ res: "Error getting documents", error });
+//     }
+// });
 
 //? GET single user by email
 router.get('/getUser/:id', async (req, res) => {
